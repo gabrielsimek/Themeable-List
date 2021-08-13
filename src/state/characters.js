@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import fetchCharacters from '../services/airBenderApi';
 const useCharacters = (page) => {
   const [characters, setCharacters] = useState([]);

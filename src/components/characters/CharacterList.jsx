@@ -2,14 +2,11 @@ import React, { useState } from 'react';
 import { useCharacters } from '../../state/characters';
 import CharacterItem from './CharacterItem';
 import Pager from '../paging/Pager';
+import { usePaging } from '../../state/paging.js';
 
 const CharacterList = () => {
-  const [page, setPage] = useState(1);
+  const [page, handlePageChange] = usePaging();
   const [characters, loading] = useCharacters(page);
-
-  const handlePageChange = (page) => {
-    setPage(prevPage => prevPage + page);
-  };
  
   const characterElements = characters.map(character => {
     return (
