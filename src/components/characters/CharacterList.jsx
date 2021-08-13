@@ -8,7 +8,7 @@ import { usePerPage } from '../../state/perPage';
 const CharacterList = () => {
   const [perPage, handlePerPageChange] = usePerPage();
   const [page, handlePageChange] = usePaging();
-  const [characters, loading] = useCharacters(page);
+  const [characters, loading] = useCharacters(page, perPage);
  
   const characterElements = characters.map(character => {
     return (
