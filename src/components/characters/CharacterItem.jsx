@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const CharacterItem = ({ name, image }) => {
+  // const [something, setSomething] = useState('');
   return (
     <figure>
       <img src={image} alt={name}/>
