@@ -1,12 +1,9 @@
 import React from 'React';
+import { useCharacters } from '../../state/characters';
 import CharacterItem from './CharacterItem';
 
 const CharacterList = () => {
-//   const characters = useCharacters();
-  const characters = [{ 
-    name: 'test', 
-    image: 'https://placekitten.com/g/200/300' 
-  }];
+  const [characters, loading] = useCharacters();
   const characterElements = characters.map(character => {
     return (
       <li key={character.name}>
@@ -14,7 +11,7 @@ const CharacterList = () => {
       </li>
     );
   });
-
+  if(loading) return <h1>Loading...</h1>;
   return <ul>{characterElements}</ul>;
 };
 
