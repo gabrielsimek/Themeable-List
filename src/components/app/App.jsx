@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelectedTheme } from '../../state/ThemeProvider';
+import { CharacterProvider } from '../../state/CharacterProvider';
 import CharacterList from '../characters/CharacterList';
 import Header from '../header/Header';
 export default function App() {
@@ -7,7 +8,9 @@ export default function App() {
   return (
     <main style={theme}>
       <Header/>
-      <CharacterList/>
+      <CharacterProvider>
+        <CharacterList/>
+      </CharacterProvider>
     </main>
   );
 }

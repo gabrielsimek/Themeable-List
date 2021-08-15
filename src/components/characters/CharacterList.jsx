@@ -1,10 +1,10 @@
 import React from 'react';
-import { useCharacters } from '../../state/characters';
+// import { useCharacters } from '../../state/characters';
 import CharacterItem from './CharacterItem';
 import Pager from '../paging/Pager';
-import { usePaging } from '../../state/paging.js';
-import { usePerPage } from '../../state/perPage';
-import { useSearch } from '../../state/search';
+import { usePaging, usePerPage, useSearch, useCharacters } from '../../state/CharacterProvider';
+// import { usePerPage } from '../../state/perPage';
+// import { useSearch } from '../../state/search';
 import Search from '../search/Search';
 const CharacterList = () => {
   const [perPage, handlePerPageChange] = usePerPage();
@@ -27,11 +27,12 @@ const CharacterList = () => {
         onChange={handleSearchChange}
       />
       <ul>{characterElements}</ul>
+      {!searchTerm && 
       <Pager 
         perPage={perPage}
         page={page} 
         onClick={handlePageChange} 
-        onChange={handlePerPageChange}/>
+        onChange={handlePerPageChange}/>}  
     </>
   );
 };
