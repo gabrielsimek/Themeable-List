@@ -4,9 +4,6 @@ const usePerPage = () => {
   const handlePerPageChange = ({ target }) => {
     setPerPage(Number(target.value));    
   };
-  console.log('====================================');
-  console.log(perPage);
-  console.log('====================================');
   return [perPage, handlePerPageChange];
 };
 

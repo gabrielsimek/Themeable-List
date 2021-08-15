@@ -1,5 +1,5 @@
 
-export default async function fetchCharacters(page, perPage){
+export async function fetchCharacters(page, perPage){
   const res = await fetch(`https://last-airbender-api.herokuapp.com/api/v1/characters?perPage=${perPage}&page=${page}`);
   const characters = await res.json();
   return characters.map(({ name, photoUrl }) => {
@@ -9,3 +9,14 @@ export default async function fetchCharacters(page, perPage){
     };
   });
 }
+export async function fetchCharacter(searchTerm){
+  const res = await fetch(`https://last-airbender-api.herokuapp.com/api/v1/characters?name=${searchTerm}`);
+  const matchingCharacters = await res.json();
+  return matchingCharacters.map(({ name, photoUrl }) => {
+    return {
+      name,
+      image: photoUrl
+    };
+  });
+}
+
