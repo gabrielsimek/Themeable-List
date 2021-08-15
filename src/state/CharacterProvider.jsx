@@ -1,14 +1,16 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { fetchCharacters, fetchCharacter } from '../services/airBenderApi';
+
 const CharacterContext = createContext();
 
-
+//eslint-disable-next-line
 export const CharacterProvider = ({ children }) => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(25);
   const [searchTerm, setSearchTerm] = useState('');
+
   const handleSearchChange = ({ target }) => {
     setSearchTerm(target.value);
   };
@@ -32,13 +34,13 @@ export const CharacterProvider = ({ children }) => {
         .finally(() => setLoading(false));
     }
   }, [page, perPage, searchTerm]);
+
   return (
     <CharacterContext.Provider value={{ characters, loading, page, perPage, searchTerm, handlePageChange, handlePerPageChange, handleSearchChange }} >
       {children}
     </CharacterContext.Provider>
   );
 };
-
 
 export const useCharacters = () => {
   const { characters, loading } = useContext(CharacterContext);

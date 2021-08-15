@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 
 const ThemeContext = createContext();
+
 const themes = {
   light: {
     color: '#000000',
@@ -11,7 +12,7 @@ const themes = {
     background: '#222222',
   },
 };
-
+//eslint-disable-next-line
 const ThemeProvider = ({ children }) => {
   const [selectedTheme, setSelectedTheme] = useState('light');
 
