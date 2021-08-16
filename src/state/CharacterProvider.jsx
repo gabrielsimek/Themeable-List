@@ -31,7 +31,7 @@ export const CharacterProvider = ({ children }) => {
     } else {
       return fetchByName(searchTerm)
         .then(setCharacters)
-        .finally(() => setLoading(false));
+        .finally(() => setPage(1));
     }
   }, [page, perPage, searchTerm]);
 
