@@ -9,7 +9,8 @@ export async function fetchCharacters(page, perPage){
     };
   });
 }
-export async function fetchCharacter(searchTerm){
+
+export async function fetchByName(searchTerm){
   const res = await fetch(`https://last-airbender-api.herokuapp.com/api/v1/characters?name=${searchTerm}`);
   const matchingCharacters = await res.json();
   return matchingCharacters.map(({ name, photoUrl }) => {

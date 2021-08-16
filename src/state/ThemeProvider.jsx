@@ -20,8 +20,7 @@ const ThemeProvider = ({ children }) => {
     <ThemeContext.Provider value={{ selectedTheme, setSelectedTheme }}>
       {children}
     </ThemeContext.Provider>
-  );
-      
+  );     
 };
     
 const useSetSelectedTheme = () => {

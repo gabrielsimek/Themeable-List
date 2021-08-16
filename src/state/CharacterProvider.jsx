@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { fetchCharacters, fetchCharacter } from '../services/airBenderApi';
+import { fetchCharacters, fetchByName } from '../services/airBenderApi';
 
 const CharacterContext = createContext();
 
@@ -29,7 +29,7 @@ export const CharacterProvider = ({ children }) => {
         .then(setCharacters)
         .finally(() => setLoading(false));
     } else {
-      return fetchCharacter(searchTerm)
+      return fetchByName(searchTerm)
         .then(setCharacters)
         .finally(() => setLoading(false));
     }
