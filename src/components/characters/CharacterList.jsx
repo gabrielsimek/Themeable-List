@@ -4,7 +4,7 @@ import CharacterItem from './CharacterItem';
 import Pager from '../paging/Pager';
 import { usePaging, usePerPage, useSearch, useCharacters } from '../../state/CharacterProvider';
 import Search from '../search/Search';
-
+//styling inspired by Clem
 const useStyles = createUseStyles({
   characters: {
     display: 'flex',
