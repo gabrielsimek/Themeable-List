@@ -27,12 +27,6 @@ const useStyles = createUseStyles({
     border: [1, 'solid', '#ccc'],
     maxWidth: 295,
     padding: [0, 5]
-  },
-  search: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    background: 'green'
   }
 });
 
