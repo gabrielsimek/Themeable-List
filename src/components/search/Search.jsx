@@ -4,6 +4,8 @@ const Search = ({ searchTerm, onChange }) => {
   return ( 
     <label>
       <input 
+        style={{ width: '200px' }}
+        placeholder="Search by Name"
         type="text"
         value={searchTerm}
         onChange={onChange}
